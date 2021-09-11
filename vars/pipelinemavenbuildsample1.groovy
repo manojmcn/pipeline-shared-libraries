@@ -1,7 +1,5 @@
-| --- welcomeJob.groovy
-| --- jenkinsForJava.groovy
+#!groovy
 
-// jenkinsForJava.groovy
 def call(String repoUrl) {
   pipeline {
        agent any
