@@ -11,7 +11,8 @@ def call(String repoUrl) {
            stage("Tools initialization") {
                steps {
 				   sh "export M2_HOME=/opt/maven/apache-maven-3.8.2"
-				   sh "JAVA_HOME=/opt/jdk1.8.0_301"
+				   sh "export JAVA_HOME=/opt/jdk1.8.0_301"
+				   sh "export PATH=$M2_HOME/bin:$JAVA_HOME/bin:$PATH" 
                    sh "mvn --version"
                    sh "java -version"
                }
