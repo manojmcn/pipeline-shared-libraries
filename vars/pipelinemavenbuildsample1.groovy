@@ -3,16 +3,16 @@
 def call(String repoUrl) {
   pipeline {
        agent any
-       tools {
-           maven 'M2_HOME'
-           jdk 'JAVA_HOME'
-       }
+       //tools {
+           //maven 'M2_HOME'
+           //jdk 'JAVA_HOME'
+       //}
        stages {
            stage("Tools initialization") {
-               //steps {
-                   //sh "mvn --version"
-                   //sh "java -version"
-               //}
+               steps {
+                   sh "mvn --version"
+                   sh "java -version"
+               }
            }
            stage("Checkout Code") {
                steps {
