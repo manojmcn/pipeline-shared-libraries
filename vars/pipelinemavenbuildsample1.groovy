@@ -4,12 +4,14 @@ def call(String repoUrl) {
   pipeline {
        agent any
        tools {
-           maven 'Maven 3.8.2'
+           //maven 'Maven 3.8.2'
            //jdk 'jdk1.8.0_301'
        }
        stages {
            stage("Tools initialization") {
                steps {
+				   sh "export M2_HOME=/opt/maven/apache-maven-3.8.2"
+				   sh "JAVA_HOME=/opt/jdk1.8.0_301"
                    sh "mvn --version"
                    sh "java -version"
                }
